@@ -32,6 +32,9 @@ public class ArrayEx7
         int rnd;            //random number variable
         double sum = 0;        //sum of all random numbers
         double avg = 0;            //average of all random numbers
+        
+        int smallest = Integer.MAX_VALUE;       //max value integer
+        int largest = Integer.MIN_VALUE;        //min value integer
 
     // ***** create objects *****
 
@@ -69,6 +72,18 @@ public class ArrayEx7
         for(int i = 0; i < MAXLIST; i++){
             avg = sum/MAXLIST;
         }//end for loop average
+        
+        for(int i = 0; i < MAXLIST; i++) {
+            if(smallest > list[i]) {
+            smallest = list[i];
+            }//end if
+        }//end for loop smallest
+        
+        for(int i = 0; i < MAXLIST; i++) {
+            if(list[i] > largest) {
+            largest = list[i];
+            }//end if
+        }//end for loop largest
 
     // ***** output *****
 
@@ -77,8 +92,9 @@ public class ArrayEx7
         }//end for loop printing array
          
         System.out.println("\nSum: " + sum);       //print the sum of the array
-        System.out.println("\nAverage: " + avg);       //print the sum of the array
-        
+        System.out.println("Average: " + avg);       //print the sum of the array
+        System.out.println("Smallest Value: " + smallest);      //print smallest number in array
+        System.out.println("Largest Value: " + largest);        //print largest number in array
     // ***** closing message *****
 
         System.out.println("end of processing");
