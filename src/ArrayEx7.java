@@ -4,12 +4,13 @@
 //
 //  Assignment:         ArrayEx7
 //
-//  Description:	load an array with random numbers and print it out
+//  Description:	load an array with random numbers and print the numbers 
+//                      and their sum
 //
 //
 //  Input:		describe any input from keyboard or file
 //
-//  Output:		an array of random numbers
+//  Output:		an array of random numbers, sum of the array
 // ***********************************************************************
 
 import javax.swing.*;
@@ -29,6 +30,7 @@ public class ArrayEx7
         int list[] = new int[MAXLIST];  //set max array size
         
         int rnd;            //random number variable
+        int sum = 0;        //sum of all random numbers
 
     // ***** create objects *****
 
@@ -58,12 +60,18 @@ public class ArrayEx7
             rnd = random.nextInt(10)+1;    //process a random variable
             list[i] = rnd;                  //store in an array
         }//end for loop random variable processing
+        
+        for(int i = 0; i < MAXLIST; i++){
+            sum += list[i];
+        }//end for loop sum
 
     // ***** output *****
 
          for(int i = 0; i < MAXLIST; i++){ 
             System.out.println(list[i]);
         }//end for loop printing array
+         
+         System.out.println("\nSum: " + sum);       //print the sum of the array
         
     // ***** closing message *****
 
