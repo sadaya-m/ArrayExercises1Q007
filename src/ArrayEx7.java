@@ -30,7 +30,8 @@ public class ArrayEx7
         int list[] = new int[MAXLIST];  //set max array size
         
         int rnd;            //random number variable
-        int sum = 0;        //sum of all random numbers
+        double sum = 0;        //sum of all random numbers
+        double avg = 0;            //average of all random numbers
 
     // ***** create objects *****
 
@@ -64,14 +65,19 @@ public class ArrayEx7
         for(int i = 0; i < MAXLIST; i++){
             sum += list[i];
         }//end for loop sum
+        
+        for(int i = 0; i < MAXLIST; i++){
+            avg = sum/MAXLIST;
+        }//end for loop average
 
     // ***** output *****
 
-         for(int i = 0; i < MAXLIST; i++){ 
+        for(int i = 0; i < MAXLIST; i++){ 
             System.out.println(list[i]);
         }//end for loop printing array
          
-         System.out.println("\nSum: " + sum);       //print the sum of the array
+        System.out.println("\nSum: " + sum);       //print the sum of the array
+        System.out.println("\nAverage: " + avg);       //print the sum of the array
         
     // ***** closing message *****
 
