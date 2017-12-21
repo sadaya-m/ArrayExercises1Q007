@@ -8,7 +8,7 @@
 //                      and their sum
 //
 //
-//  Input:		describe any input from keyboard or file
+//  Input:		confirmation from user
 //
 //  Output:		an array of random numbers, sum of the array
 // ***********************************************************************
@@ -59,11 +59,17 @@ public class ArrayEx7
         // same folder.
 
     // ***** processing *****
-
-        for(int i = 0; i < MAXLIST; i++){
-            rnd = random.nextInt(10)+1;    //process a random variable
-            list[i] = rnd;                  //store in an array
-        }//end for loop random variable processing
+        
+        int n = Integer.parseInt(JOptionPane.showInputDialog("Do you want to load a set of numbers?"));
+        while(n != 0){
+            for(int i = 0; i < MAXLIST; i++){
+                rnd = random.nextInt(10)+1;    //process a random variable
+                list[i] = rnd;              //declare the values in the array
+                System.out.println(list[i]);
+            }
+            System.out.println("\n");
+            n = Integer.parseInt(JOptionPane.showInputDialog("Do you want to load another set of numbers?"));
+        }
         
         for(int i = 0; i < MAXLIST; i++){
             sum += list[i];
